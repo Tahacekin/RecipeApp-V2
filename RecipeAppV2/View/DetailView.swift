@@ -37,9 +37,9 @@ struct DetailView: View {
          .font(.headline)
          .padding(.vertical)
      
- ForEach(recipe.ingredients, id: \.self) { item in
+ ForEach(recipe.ingredients) { item in
                      
-          Text("• " + item)
+            Text("• " + item.name)
                      
                      
      }
