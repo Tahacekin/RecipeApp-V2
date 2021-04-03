@@ -11,12 +11,16 @@ struct RecipeFeaturedView: View {
 @EnvironmentObject var model:RecipeModel
     
     var body: some View {
-        GeometryReader { geo in
+        VStack(alignment: .leading) {
+            Text("Featured Recipes")
+                .fontWeight(.bold)
+            GeometryReader { geo in
             TabView {
                 ForEach(0..<model.recipes.count) { index in
                     if model.recipes[index].featured == true {
                         ZStack {
                             Rectangle()
+                                .foregroundColor(Color.white)
                                 
                        
                             VStack(spacing: 0) {
@@ -24,7 +28,8 @@ struct RecipeFeaturedView: View {
                                     .resizable()
                                     .scaledToFill()
                                 Text(model.recipes[index].name)
-                                    
+                                    .foregroundColor(Color.black)
+                                    .font(.headline)
                                     
                             }
                         
@@ -38,7 +43,15 @@ struct RecipeFeaturedView: View {
             }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
-       
+            VStack {
+                Text("Prep time :")
+                    .font(.headline)
+                Text("1hr")
+                Text("Highlights")
+                    .font(.headline)
+                Text("Healty, Hearty")
+            }
+        }.padding(.leading)
     }
 }
 
