@@ -11,12 +11,40 @@ struct RecipeFeaturedView: View {
 @EnvironmentObject var model:RecipeModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geo in
+            TabView {
+                ForEach(0..<model.recipes.count) { index in
+                    if model.recipes[index].featured == true {
+                        ZStack {
+                            Rectangle()
+                                
+                       
+                            VStack(spacing: 0) {
+                                Image(model.recipes[index].image)
+                                    .resizable()
+                                    .scaledToFill()
+                                Text(model.recipes[index].name)
+                                    
+                                    
+                            }
+                        
+                        }.frame(width: geo.size.width-50, height: geo.size.height-200)
+                        .cornerRadius(20)
+                        .shadow(radius: 10)
+                        
+                    }
+                    
+                }
+            }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+        }
+       
     }
 }
 
 struct RecipeFeaturedView_Previews: PreviewProvider {
     static var previews: some View {
         RecipeFeaturedView()
+            .environmentObject(RecipeModel())
     }
 }
