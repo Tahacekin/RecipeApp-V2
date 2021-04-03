@@ -14,7 +14,7 @@ struct RecipeTabView: View {
         
            TabView {
             
-            Text("Feautered Tab")
+            RecipeFeaturedView()
                 .tabItem {
                     
                     Image(systemName: "star.fill")
@@ -30,7 +30,7 @@ struct RecipeTabView: View {
                     Text("List")
                 }
             
-        }
+           }.environmentObject(RecipeModel())
         
         
         

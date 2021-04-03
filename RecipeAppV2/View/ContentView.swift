@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-@ObservedObject var recipeView = RecipeModel()
+@EnvironmentObject var recipeView:RecipeModel
     
     var body: some View {
      
@@ -25,7 +25,7 @@ struct ContentView: View {
                     Image(r.image)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .frame(width: 100, height: 50, alignment: .center)
                      .clipped()
                             
                     Text(r.name)

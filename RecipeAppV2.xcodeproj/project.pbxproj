@@ -17,6 +17,7 @@
 		E819EA4025DDAFC1004AF805 /* recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = E819EA3F25DDAFC1004AF805 /* recipe.json */; };
 		E819EA4425DDB0B7004AF805 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E819EA4325DDB0B7004AF805 /* DetailView.swift */; };
 		E819EA4725DDB19C004AF805 /* RecipeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E819EA4625DDB19C004AF805 /* RecipeTabView.swift */; };
+		E895526C2618DFB000F023F7 /* RecipeFeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E895526B2618DFB000F023F7 /* RecipeFeaturedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E819EA3F25DDAFC1004AF805 /* recipe.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = recipe.json; sourceTree = "<group>"; };
 		E819EA4325DDB0B7004AF805 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		E819EA4625DDB19C004AF805 /* RecipeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTabView.swift; sourceTree = "<group>"; };
+		E895526B2618DFB000F023F7 /* RecipeFeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFeaturedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				E819EA2325DDAF01004AF805 /* ContentView.swift */,
 				E819EA4325DDB0B7004AF805 /* DetailView.swift */,
 				E819EA4625DDB19C004AF805 /* RecipeTabView.swift */,
+				E895526B2618DFB000F023F7 /* RecipeFeaturedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				E819EA3725DDAF86004AF805 /* RecipeModel.swift in Sources */,
 				E819EA4725DDB19C004AF805 /* RecipeTabView.swift in Sources */,
 				E819EA3A25DDAF93004AF805 /* Recipe.swift in Sources */,
+				E895526C2618DFB000F023F7 /* RecipeFeaturedView.swift in Sources */,
 				E819EA3D25DDAFA4004AF805 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
