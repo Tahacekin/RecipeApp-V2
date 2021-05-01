@@ -13,41 +13,28 @@ class DataService {
     
     
     
-   static func getLocaldata() -> [Recipe] {
+    static func getLocaldata() -> [Recipe] {
         
         let pathString = Bundle.main.path(forResource: "recipe", ofType: "json")
         
-        guard pathString != nil else {
-          
-            return [Recipe]()
-        
-        }
+        guard pathString != nil else { return [Recipe]() }
         
         let url = URL(fileURLWithPath: pathString!)
         
-       
         do {
             
             let data = try Data(contentsOf: url)
-        
-            
-            
             
             do {
+            
             let decoder = JSONDecoder()
-            
-           
-                
-                
             let recipeData = try decoder.decode([Recipe].self, from: data)
-            
+                
                 for r in recipeData {
                     
                     r.id = UUID()
                     
-                    
-                    
-                    for i in r.ingredients {
+                   for i in r.ingredients {
                         
                         
                         i.id = UUID()
@@ -55,12 +42,10 @@ class DataService {
                         
                     }
                     
-                    
-                    
-                    
+
                 }
-            
-            return recipeData
+                
+                return recipeData
             }
             catch {
                 
@@ -69,12 +54,12 @@ class DataService {
                 
                 
             }
-        
-        
-        
-        
-        
-        
+            
+            
+            
+            
+            
+            
         }
         catch {
             
@@ -84,7 +69,7 @@ class DataService {
         
         
         
-       return [Recipe]()
+        return [Recipe]()
     }
     
     

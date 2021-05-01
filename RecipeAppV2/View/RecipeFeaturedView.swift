@@ -8,41 +8,47 @@
 import SwiftUI
 
 struct RecipeFeaturedView: View {
-@EnvironmentObject var model:RecipeModel
+    @EnvironmentObject var model:RecipeModel
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
             Text("Featured Recipes")
+                .font(.title)
                 .fontWeight(.bold)
+            
             GeometryReader { geo in
-            TabView {
-                ForEach(0..<model.recipes.count) { index in
-                    if model.recipes[index].featured == true {
-                        ZStack {
-                            Rectangle()
-                                .foregroundColor(Color.white)
-                                
-                       
-                            VStack(spacing: 0) {
-                                Image(model.recipes[index].image)
-                                    .resizable()
-                                    .scaledToFill()
-                                Text(model.recipes[index].name)
-                                    .foregroundColor(Color.black)
-                                    .font(.headline)
-                                    
-                            }
+                
+                TabView {
+                    
+                    ForEach(0..<model.recipes.count) { index in
                         
-                        }.frame(width: geo.size.width-50, height: geo.size.height-200)
-                        .cornerRadius(20)
-                        .shadow(radius: 10)
+                        if model.recipes[index].featured == true {
+                           
+                            ZStack {
+                                Rectangle()
+                                    .foregroundColor(Color.white)
+                                
+                                
+                                VStack(spacing: 0) {
+                                    Image(model.recipes[index].image)
+                                        .resizable()
+                                        .scaledToFill()
+                                    Text(model.recipes[index].name)
+                                        .foregroundColor(Color.black)
+                                        .font(.headline)
+                                    
+                                }
+                                
+                            }.frame(width: geo.size.width-50, height: geo.size.height-200)
+                            .cornerRadius(20)
+                            .shadow(radius: 10)
+                            
+                        }
                         
                     }
-                    
-                }
-            }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
-            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-        }
+                }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+            }
             VStack {
                 Text("Prep time :")
                     .font(.headline)
