@@ -15,6 +15,7 @@ struct RecipeFeaturedView: View {
             Text("Featured Recipes")
                 .font(.title)
                 .fontWeight(.bold)
+                .padding(.top, 40)
             
             GeometryReader { geo in
                 
@@ -56,7 +57,8 @@ struct RecipeFeaturedView: View {
                 Text("Highlights")
                     .font(.headline)
                 Text("Healty, Hearty")
-            }
+            }.padding(.bottom)
+
         }.padding(.leading)
     }
 }
