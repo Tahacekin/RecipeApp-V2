@@ -24,20 +24,22 @@ struct RecipeFeaturedView: View {
                     ForEach(0..<model.recipes.count) { index in
                         
                         if model.recipes[index].featured == true {
-                           
+                            
                             ZStack {
-                                Rectangle()
-                                    .foregroundColor(Color.white)
+                            Rectangle()
+                             .foregroundColor(Color.white)
                                 
                                 
-                                VStack(spacing: 0) {
-                                    Image(model.recipes[index].image)
-                                        .resizable()
-                                        .scaledToFill()
-                                    Text(model.recipes[index].name)
-                                        .foregroundColor(Color.black)
-                                        .font(.headline)
-                                    
+                            VStack(spacing: 0) {
+                             
+                              Image(model.recipes[index].image)
+                              .resizable()
+                              .scaledToFill()
+                             
+                                Text(model.recipes[index].name)
+                                 .foregroundColor(Color.black)
+                                 .font(.headline)
+                             
                                 }
                                 
                             }.frame(width: geo.size.width-50, height: geo.size.height-200)
@@ -58,7 +60,7 @@ struct RecipeFeaturedView: View {
                     .font(.headline)
                 Text("Healty, Hearty")
             }.padding(.bottom)
-
+            
         }.padding(.leading)
     }
 }

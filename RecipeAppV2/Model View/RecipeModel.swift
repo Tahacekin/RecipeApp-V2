@@ -22,4 +22,11 @@ class RecipeModel:ObservableObject {
         
     }
     
+    static func getPortion(ingredient: Ingredients, recipeServings: Int, targetServings: Int) -> String {
+        
+        // Going to calculate
+        
+        return String(targetServings)
+    }
+    
 }
